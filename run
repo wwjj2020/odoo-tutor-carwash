@@ -1,0 +1,1 @@
+./odoo-bin --addons-path=/home/carlos/Tutor/odoo-tutor-carwash/addons,/home/carlos/Tutor/odoo-tutor-carwash/addonscarwash -d carwash --db_port 5432 --xmlrpc-port=8070 --limit-memory-hard 0 --limit-time-real=10000 -u carwash
