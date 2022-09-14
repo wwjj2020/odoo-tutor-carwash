@@ -31,7 +31,9 @@
         'views/Pegawai/pegawai_view.xml',
         'views/Pegawai/pencuci_view.xml',
         'views/Pegawai/pengelap_view.xml',
-        'views/Finance/cucimobil_view.xml'
+        'views/Finance/cucimobil_view.xml',
+        'views/Finance/purchase_view.xml',
+        'views/Storage/aksesoris_view.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

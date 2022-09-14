@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- carwash.purchase tree view -->
+    <record id="carwash_purchase_view_tree" model="ir.ui.view">
+        <field name="name">carwash.purchase.view.tree</field>
+        <field name="model">carwash.purchase</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="tgl" />
+                <field name="aksesoris_id" />
+                <field name="qty" />
+                <field name="harga_satuan" />
+                <field name="biaya" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- carwash.purchase form view -->
+    <record id="carwash_purchase_view_form" model="ir.ui.view">
+        <field name="name">carwash.purchase.view.form</field>
+        <field name="model">carwash.purchase</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="tgl" />
+                        <field name="aksesoris_id" />
+                        <field name="qty" />
+                        <field name="biaya" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- carwash.purchase action window -->
+    <record id="carwash_purchase_action" model="ir.actions.act_window">
+        <field name="name">carwash.purchase.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">carwash.purchase</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="carwash_purchase_menu_act" 
+              name="Purchase" 
+              parent="carwash_transaksi_menu_categ" 
+              action="carwash_purchase_action" 
+              sequence="2"/>
+
+</odoo>

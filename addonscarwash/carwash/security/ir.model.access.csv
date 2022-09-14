@@ -3,3 +3,6 @@ access_carwash_pegawai,access.carwash.pegawai,model_carwash_pegawai,,1,1,1,1
 access_carwash_pencuci,access.carwash.pencuci,model_carwash_pencuci,,1,1,1,1
 access_carwash_pengelap,access.carwash.pengelap,model_carwash_pengelap,,1,1,1,1
 access_carwash_cucimobil,access.carwash.cucimobil,model_carwash_cucimobil,,1,1,1,1
+access_carwash_aksesoris,access.carwash.aksesoris,model_carwash_aksesoris,,1,1,1,1
+access_carwash_biayatambahan,access.carwash.biayatambahan,model_carwash_biayatambahan,,1,1,1,1
+access_carwash_purchase,access.carwash.purchase,model_carwash_purchase,,1,1,1,1

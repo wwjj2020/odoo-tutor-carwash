@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- carwash.aksesoris tree view -->
+<record id="carwash_aksesoris_view_tree" model="ir.ui.view">
+    <field name="name">carwash.aksesoris.view.tree</field>
+    <field name="model">carwash.aksesoris</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name" />
+            <field name="buy" />
+            <field name="sell" />
+            <field name="qty" />
+        </tree>
+    </field>
+</record>
+
+<!-- carwash.aksesoris form view -->
+<record id="carwash_aksesoris_view_form" model="ir.ui.view">
+    <field name="name">carwash.aksesoris.view.form</field>
+    <field name="model">carwash.aksesoris</field>
+    <field name="arch" type="xml">
+        <form string="">
+            <sheet>
+                <group>
+                    <field name="name" />
+                    <field name="buy" />
+                    <field name="sell" />
+                    <field name="qty" />
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<!-- carwash.aksesoris action window -->
+<record id="carwash_aksesoris_action" model="ir.actions.act_window">
+    <field name="name">Daftar Aksesoris</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">carwash.aksesoris</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<!-- This Menu Item must have a parent and an action -->
+<menuitem id="carwash_aksesoris_menu_act" 
+          name="Aksesoris" 
+          parent="carwash_storage_menu_categ" 
+          action="carwash_aksesoris_action" 
+          sequence="1"/>
+
+</odoo>
