@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- carwash.cucimobil tree view -->
+    <record id="carwash_cucimobil_view_tree" model="ir.ui.view">
+        <field name="name">carwash.cucimobil.view.tree</field>
+        <field name="model">carwash.cucimobil</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="tgl" />
+                <field name="plat" />
+                <field name="merek" />
+                <field name="ukuran" />
+                <field name="harga" />
+                <field name="pencuci_id" />
+                <field name="pengelap_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- carwash.cucimobil form view -->
+    <record id="carwash_cucimobil_view_form" model="ir.ui.view">
+        <field name="name">carwash.cucimobil.view.form</field>
+        <field name="model">carwash.cucimobil</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="tgl" />
+                        <field name="plat" />
+                        <field name="merek" />
+                        <field name="ukuran" />
+                        <field name="harga" />
+                        <field name="pencuci_id" />
+                        <field name="pengelap_ids" widget="many2many_tags">
+                            <tree>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- carwash.cucimobil action window -->
+    <record id="carwash_cucimobil_action" model="ir.actions.act_window">
+        <field name="name">Transaksi Cuci Mobil</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">carwash.cucimobil</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="carwash_cucimobil_menu_act" 
+              name="Daftar Cuci Mobil" 
+              parent="carwash_transaksi_menu_categ" 
+              action="carwash_cucimobil_action" 
+              sequence="1"/>
+
+</odoo>

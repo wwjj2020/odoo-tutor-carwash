@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="carwash_menu_root" 
+              name="Carwash" 
+              sequence="1"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="carwash_pegawai_menu_categ" 
+              name="Pegawai" 
+              parent="carwash_menu_root" 
+              sequence="2"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="carwash_transaksi_menu_categ" 
+              name="Transaksi" 
+              parent="carwash_menu_root" 
+              sequence="3"/>
+    
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="carwash_storage_menu_categ" 
+              name="Storage" 
+              parent="carwash_menu_root" 
+              sequence="4"/>
+
+    
+
+</odoo>

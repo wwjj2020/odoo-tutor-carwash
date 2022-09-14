@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_carwash_carwash,carwash.carwash,model_carwash_carwash,base.group_user,1,1,1,1
+access_carwash_pegawai,access.carwash.pegawai,model_carwash_pegawai,,1,1,1,1
+access_carwash_pencuci,access.carwash.pencuci,model_carwash_pencuci,,1,1,1,1
+access_carwash_pengelap,access.carwash.pengelap,model_carwash_pengelap,,1,1,1,1
+access_carwash_cucimobil,access.carwash.cucimobil,model_carwash_cucimobil,,1,1,1,1

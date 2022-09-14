@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- carwash.pengelap inherit tree view -->
+    <record id="carwash_pengelap_tree_view_id" model="ir.ui.view">
+        <field name="name">carwash.pengelap.inherit.view.tree</field>
+        <field name="model">carwash.pengelap</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="carwash_pegawai_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="id_pengelap" />
+            </xpath>
+            <xpath expr="//field[@name='telp']" position="after">
+                <field name="total_mobil" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- carwash.pengelap inherit tree view -->
+    <record id="carwash_pengelap_form_view_id" model="ir.ui.view">
+        <field name="name">carwash.pengelap.inherit.view.tree</field>
+        <field name="model">carwash.pengelap</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="carwash_pegawai_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//group[1]" position="before">
+                <group name="id" string="ID">
+                    <field name="id_pengelap" />
+                </group>
+            </xpath>       
+        </field>
+    </record>
+
+    <!-- carwash.pengelap action window -->
+    <record id="carwash_pengelap_action" model="ir.actions.act_window">
+        <field name="name">Daftar Pengelap</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">carwash.pengelap</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="carwash_pengelap_menu_act" 
+              name="Daftar Pengelap" 
+              parent="carwash_pegawai_menu_categ" 
+              action="carwash_pengelap_action" 
+              sequence="2"/>
+
+</odoo>
