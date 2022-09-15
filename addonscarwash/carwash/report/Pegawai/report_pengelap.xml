@@ -1,0 +1,11 @@
+<odoo>
+    <record id="report_pengelap_xlsx" model="ir.actions.report">
+        <field name="name">Daftar Pengelap Excel</field>
+        <field name="model">carwash.pengelap</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">carwash.report_pengelap_xlsx</field>
+        <field name="report_file">carwash.report_pengelap_xlsx</field>
+        <field name="binding_model_id" ref="model_carwash_pengelap"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

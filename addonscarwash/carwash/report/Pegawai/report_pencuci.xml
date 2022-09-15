@@ -1,0 +1,11 @@
+<odoo>
+    <record id="report_pencuci_xlsx" model="ir.actions.report">
+        <field name="name">Daftar Pencuci Excel</field>
+        <field name="model">carwash.pencuci</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">carwash.report_pencuci_xlsx</field>
+        <field name="report_file">carwash.report_pencuci_xlsx</field>
+        <field name="binding_model_id" ref="model_carwash_pencuci"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
