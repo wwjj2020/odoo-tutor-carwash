@@ -7,7 +7,7 @@ class DaftarPengelap(models.AbstractModel):
 
     def generate_xlsx_report(self, workbook, data, pengelap):
         # One sheet by partner
-        sheet = workbook.add_worksheet('Daftar Pencuci')
+        sheet = workbook.add_worksheet('Daftar Pengelap')
         # Menambahkan informasi tanggal laporan
         sheet.write(0, 0, str(self.tgl_laporan))
         sheet.write(1, 0, 'ID Pengelap')

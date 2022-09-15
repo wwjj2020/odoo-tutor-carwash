@@ -24,7 +24,7 @@ class CuciMobil(models.Model):
                    ]
     )
 
-    harga = fields.Integer('Harga Cuci', readonly=True)
+    harga = fields.Integer('Harga Cuci')
     
     pencuci_id = fields.Many2one(
         string='Pencuci Mobil',
@@ -68,7 +68,8 @@ class CuciMobil(models.Model):
     @api.depends('biayatambahan_ids', 'harga')
     def _compute_total_harga(self):
         for i in self:
-            i.total_harga = i.biayatambahan_ids.total + i.harga
+            i.total_harga = sum(i.biayatambahan_ids.mapped('total')) + i.harga
+            
 
     @api.onchange('ukuran')
     def _onchange_ukuran(self):

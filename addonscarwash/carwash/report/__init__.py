@@ -3,3 +3,4 @@
 from .Pegawai import DaftarPencuci
 from .Pegawai import DaftarPengelap
 from .Storage import DaftarAksesoris
+from .Finance import DaftarCuciMobil

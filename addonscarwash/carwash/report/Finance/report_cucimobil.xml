@@ -1,0 +1,11 @@
+<odoo>
+    <record id="report_cucimobil_xlsx" model="ir.actions.report">
+        <field name="name">Daftar Cuci Mobil Excel</field>
+        <field name="model">carwash.cucimobil</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">carwash.report_cucimobil_xlsx</field>
+        <field name="report_file">carwash.report_cucimobil_xlsx</field>
+        <field name="binding_model_id" ref="model_carwash_cucimobil"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

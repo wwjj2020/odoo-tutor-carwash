@@ -36,7 +36,7 @@
                         <field name="plat" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
                         <field name="merek" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
                         <field name="ukuran" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
-                        <field name="harga" readonly="1"/>
+                        <field name="harga" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
                         <field name="pencuci_id" />
                         <field name="pengelap_ids">
                             <tree editable="bottom">
@@ -45,7 +45,7 @@
                         </field>
                     </group>
                     <group name="Daftar Barang" string="Daftar Barang">
-                        <field name="biayatambahan_ids">
+                        <field name="biayatambahan_ids" attrs="{'readonly' : [('state', '!=', 'draft')]}">
                             <tree editable="bottom">
                                 <field name="aksesoris_id"/>
                                 <field name="harga_satuan"/>
