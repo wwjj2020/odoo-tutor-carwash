@@ -1,5 +1,4 @@
 from email.policy import default
-from re import S
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
@@ -8,9 +7,9 @@ class CuciMobil(models.Model):
     _name = 'carwash.cucimobil'
     _description = 'New Description'
 
-    name = fields.Char(string='Nomor Transaksi')
+    name = fields.Char(string='Nomor Transaksi', required=True)
     tgl = fields.Date(string="Tanggal Transaksi", default=fields.Datetime.now())
-    plat = fields.Char(string='Plat Mobil')
+    plat = fields.Char(string='Plat Mobil', required=True)
     merek = fields.Char(string='Tipe Mobil')
     
     ukuran = fields.Selection(
@@ -40,6 +39,27 @@ class CuciMobil(models.Model):
         string='Biaya Tambahan')
 
     total_harga = fields.Integer(compute='_compute_total_harga', string='total_harga')
+
+    state = fields.Selection(
+        string='Status',
+        selection=[('draft', 'Draft'),
+                   ('confirm', 'Confirm'),
+                   ('done', 'Done'),
+                   ('cancelled', 'Cancelled'),
+                   ],
+        required=True, readonly=True, default='draft')
+
+    def action_confirm(self):
+        self.write({'state': 'confirm'})
+
+    def action_done(self):
+        self.write({'state': 'done'})
+
+    def action_cancel(self):
+        self.write({'state': 'cancelled'})
+
+    def action_draft(self):
+        self.write({'state': 'draft'})
     
     @api.depends('biayatambahan_ids', 'harga')
     def _compute_total_harga(self):

@@ -11,7 +11,6 @@
                 <field name="tgl" />
                 <field name="aksesoris_id" />
                 <field name="qty" />
-                <field name="harga_satuan" />
                 <field name="biaya" />
             </tree>
         </field>
@@ -23,13 +22,20 @@
         <field name="model">carwash.purchase</field>
         <field name="arch" type="xml">
             <form string="">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" class="btn btn-primary" states="draft"/>
+                    <button name="action_done" type="object" string="Done" class="btn btn-primary" states="confirm"/>
+                    <button name="action_cancel" type="object" string="Cancel" class="btn btn-warning" states="confirm" confirm="Anda yakin ingin membatalkan?"/>
+                    <button name="action_draft" type="object" string="Kembali ke Draft" class="btn btn-danger" states="cancelled" confirm="Anda yakin untuk mengedit?"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+                </header>
                 <sheet>
                     <group>
-                        <field name="name" />
-                        <field name="tgl" />
-                        <field name="aksesoris_id" />
-                        <field name="qty" />
-                        <field name="biaya" />
+                        <field name="name" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="tgl" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="aksesoris_id" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="qty" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="biaya" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
                     </group>
                 </sheet>
             </form>
@@ -38,7 +44,7 @@
 
     <!-- carwash.purchase action window -->
     <record id="carwash_purchase_action" model="ir.actions.act_window">
-        <field name="name">carwash.purchase.action</field>
+        <field name="name">Purchase</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">carwash.purchase</field>
         <field name="view_mode">tree,form</field>

@@ -6,7 +6,7 @@ class Pengelap(models.Model):
     _description = 'New Description'
     _inherit = 'carwash.pegawai'
 
-    id_pengelap = fields.Char(string='ID Pengelap')
+    id_pengelap = fields.Char(string='ID Pengelap',required=True)
 
     cucimobil_ids = fields.Many2many(
         string='Daftar Cuci Mobil',

@@ -6,7 +6,7 @@ class Pencuci(models.Model):
     _description = 'New Description'
     _inherit = 'carwash.pegawai'
 
-    id_pencuci = fields.Char(string='ID Pencuci')
+    id_pencuci = fields.Char(string='ID Pencuci', required=True)
     
     cucimobil_ids = fields.One2many(
         string='cucimobil',
