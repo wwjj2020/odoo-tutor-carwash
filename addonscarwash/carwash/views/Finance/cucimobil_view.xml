@@ -36,7 +36,7 @@
                         <field name="plat" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
                         <field name="merek" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
                         <field name="ukuran" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
-                        <field name="harga" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="harga" readonly="1"/>
                         <field name="pencuci_id" />
                         <field name="pengelap_ids">
                             <tree editable="bottom">

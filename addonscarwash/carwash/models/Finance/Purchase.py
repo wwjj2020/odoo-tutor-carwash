@@ -61,3 +61,7 @@ class Purchase(models.Model):
             self.env['carwash.aksesoris'].search([('id','=',self.aksesoris_id.id)]).write({'qty' : self.aksesoris_id.qty - self.qty})
 
         line = super(Purchase, self).unlink()
+    
+    _sql_constraints = [
+        ('no_nota_unik', 'unique (name)', 'Nomor Nota tidak boleh sama!')
+    ]

@@ -11,6 +11,10 @@ class CuciMobil(models.Model):
     tgl = fields.Date(string="Tanggal Transaksi", default=fields.Datetime.now())
     plat = fields.Char(string='Plat Mobil', required=True)
     merek = fields.Char(string='Tipe Mobil')
+
+    _sql_constraints = [
+        ('no_nota_unik', 'unique (name)', 'Nomor Nota tidak boleh sama!')
+    ]
     
     ukuran = fields.Selection(
         string='Ukuran Mobil',
@@ -20,7 +24,7 @@ class CuciMobil(models.Model):
                    ]
     )
 
-    harga = fields.Integer('Harga Cuci')
+    harga = fields.Integer('Harga Cuci', readonly=True)
     
     pencuci_id = fields.Many2one(
         string='Pencuci Mobil',
@@ -105,7 +109,6 @@ class CuciMobil(models.Model):
                   pass
 
       return line
-            
             
 class BiayaTambahan(models.Model):
     _name = 'carwash.biayatambahan'

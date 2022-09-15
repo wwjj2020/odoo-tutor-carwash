@@ -35,7 +35,7 @@
                         <field name="tgl" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
                         <field name="aksesoris_id" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
                         <field name="qty" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
-                        <field name="biaya" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="biaya" readonly="1"/>
                     </group>
                 </sheet>
             </form>

@@ -20,3 +20,7 @@ class Pengelap(models.Model):
         for rec in self:
             ids = self.env['carwash.cucimobil'].search([('pengelap_ids', '=', rec.id)]).mapped('name')
             rec.total_mobil = len(ids)
+
+    _sql_constraints = [
+        ('id_pengelap_unik', 'unique (id_pengelap)', 'ID pengelap tidak boleh sama')
+    ]

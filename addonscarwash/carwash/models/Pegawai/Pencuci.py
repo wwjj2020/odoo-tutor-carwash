@@ -21,3 +21,7 @@ class Pencuci(models.Model):
         for rec in self:
             ids = self.env['carwash.cucimobil'].search([('pencuci_id', '=', rec.id)]).mapped('name')
             rec.total_mobil = len(ids)
+
+    _sql_constraints = [
+        ('id_pencuci_unik', 'unique (id_pencuci)', 'ID pencuci tidak boleh sama')
+    ]
